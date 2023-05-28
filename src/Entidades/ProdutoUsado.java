@@ -5,24 +5,14 @@ import java.util.Date;
 public class ProdutoUsado extends Produto {
     private String fabricacao;
 
-    private Double preco;
-
-    public ProdutoUsado(String nome, String fabricacao) {
-        super(nome);
-        this.fabricacao = fabricacao;
-    }
-
-    public String getFabricacao() {
-        return fabricacao;
-    }
-
-    public void setFabricacao(String fabricacao) {
+    public ProdutoUsado(String nome, Double preco, String fabricacao) {
+        super(nome, preco);
         this.fabricacao = fabricacao;
     }
 
     @Override
-    public void setPreco(Double preco) {
-        preco = this.preco;
+    public String toString() {
+        return super.toString() + ". Produto usado com data de fabricação em "
+                + fabricacao;
     }
-
 }

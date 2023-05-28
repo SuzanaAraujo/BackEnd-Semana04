@@ -4,23 +4,13 @@ package Entidades;
 public class ProdutoImportado extends Produto {
     private Double taxaAlfandega;
 
-    private Double preco;
-
-    public ProdutoImportado(String nome, Double taxa) {
-        super(nome);
-        this.taxaAlfandega = taxa;
+    public ProdutoImportado(String nome, Double preco, Double taxaAlfandega) {
+        super(nome, preco);
+        this.taxaAlfandega = taxaAlfandega;
     }
 
     @Override
-    public void setPreco(Double preco) {
-        this.preco = preco + taxaAlfandega;
-    }
-
-    public Double getTaxaAlfandega() {
-        return taxaAlfandega;
-    }
-
-    public void setTaxaAlfandega(Double taxaAlfandega) {
-        this.taxaAlfandega = taxaAlfandega;
+    public String toString() {
+        return super.toString() + ". Taxa de alfândega de R$ " + taxaAlfandega;
     }
 }
