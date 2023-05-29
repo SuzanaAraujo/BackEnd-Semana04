@@ -1,18 +1,21 @@
 package Entidades;
 
-import java.util.Date;
-
 public class ProdutoUsado extends Produto {
     private String fabricacao;
 
-    public ProdutoUsado(String nome, Double preco, String fabricacao) {
-        super(nome, preco);
+    public ProdutoUsado(String nome, Double preco, char tipo, String fabricacao) {
+        super(nome, preco, tipo);
         this.fabricacao = fabricacao;
+    }
+
+    public String mostrarProduto() {
+        return getNome() + " (usado) " + " R$ " + getPreco() +
+                " (Data de fabricação: " + fabricacao + ")";
     }
 
     @Override
     public String toString() {
-        return super.toString() + ". Produto usado com data de fabricação em "
-                + fabricacao;
+        return super.toString() + "\n" +
+        "Data de fabricação (DD/MM/YYYY): " + fabricacao;
     }
 }
